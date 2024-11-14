@@ -29,6 +29,20 @@ class CategoryViewController: UITableViewController {
         return cell
 
     }
+    //MARK: - TableView Dalegate Methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToItems", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! ViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedCategory = categoryArray[indexPath.row]
+        }
+    }
+    
     
     
     //MARK: - TableView Manipulation Methods
@@ -63,33 +77,31 @@ class CategoryViewController: UITableViewController {
         
         
         var textField = UITextField()
-        let alert = UIAlertController(title: "Add New Todo Category", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Add Category", style: .default) { (action) in
-            //what will happen once the user clicks the Add Item button on our UIAlert
+                let alert = UIAlertController(title: "Add New Todo Category", message: "", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Add Category", style: .default) { (action) in
+                    //what will happen once the user clicks the Add Item button on our UIAlert
+                    
+                    let newCategory = Category(context: self.context)
+                    
+                    newCategory.name = textField.text!
+                    
+                    self.categoryArray.append(newCategory)
+                    
+                    self.saveCategories()
+                }
+                
+                alert.addTextField { alertTextField in
+                    alertTextField.placeholder = "Create new category"
+                    textField = alertTextField
+                    
+                }
+                alert.addAction(action)
+                present(alert, animated: true, completion: nil)
+                
+                
+            }
             
-            let newCategory = Category(context: self.context)
             
-            newCategory.name = textField.text!
             
-            self.categoryArray.append(newCategory)
-            
-            self.saveCategories()
         }
-        
-        alert.addTextField { alertTextField in
-            alertTextField.placeholder = "Create new category"
-            textField = alertTextField
-            
-        }
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-        
-        
-    }
-    
-    //MARK: - TableView Dalegate Methods
-    
-    
-    
-}
 
