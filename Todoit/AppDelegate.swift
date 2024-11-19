@@ -7,13 +7,48 @@
 
 import UIKit
 import CoreData
-
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//            // Realm migration configuration
+//            let config = Realm.Configuration(
+//                schemaVersion: 2, // Increment the schema version
+//                migrationBlock: { migration, oldSchemaVersion in
+//                    if oldSchemaVersion < 2 {
+//                        // Perform migration for new schema
+//                        migration.enumerateObjects(ofType: Item.className()) { _, newObject in
+//                            newObject?["dateCreated"] = Date().timeIntervalSince1970
+//                        }
+//                    }
+//                }
+//            )
+//
+//            // Set this as the default configuration
+//            Realm.Configuration.defaultConfiguration = config
+//
+//            // Initialize Realm (optional to force the configuration load)
+//            do {
+//                _ = try Realm()
+//            } catch {
+//                print("Error initializing Realm: \(error)")
+//            }
+//
+//            return true
+//        }
+        
+        
+        do {
+            let realm = try Realm()
+        } catch {
+            print("Error inittialising new realm, \(error)")
+        }
+        
         return true
     }
     
