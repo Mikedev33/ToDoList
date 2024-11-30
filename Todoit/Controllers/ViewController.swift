@@ -3,10 +3,12 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UITableViewController {
+class ViewController: SwipeTableViewController {
     
-    var todoItems: Results<Item>?
+    
     let realm = try! Realm()
+    var todoItems: Results<Item>?
+    
     
     
     var selectedCategory : Category? {
@@ -15,12 +17,8 @@ class ViewController: UITableViewController {
         }
     }
     
-   
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         
     }
@@ -33,7 +31,7 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         if let item = todoItems?[indexPath.row] {
             cell.textLabel?.text = item.title
@@ -74,7 +72,7 @@ class ViewController: UITableViewController {
     
     @IBAction func AddButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
-        
+                
                 let alert = UIAlertController(title: "Create Item", message: "", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
                     //what will happen once the user clicks the Add Item button on our UIAlert
@@ -131,7 +129,30 @@ class ViewController: UITableViewController {
                 
                 tableView.reloadData()
             }
+    
+    //MARK: - Delete Data From Swipe
+
+            override func updateModel(at indexPath: IndexPath) {
+                print("Item for deletion: (itemForDeletion.title)")
+                if let itemForDeletion = self.todoItems?[indexPath.row] {
+                    print ("works as you think")
+                    print("Item for deletion: \(itemForDeletion.title)")
+                    do {
+                        try realm.write {
+                            realm.delete(itemForDeletion)
+                        }
+                    }catch {
+                        print("Error deleting category, \(error)")
+                    }
+                }
+            }
+    
+    
         }
+
+
+
+
         //MARK: - Search bar methods
 
         extension ViewController: UISearchBarDelegate {
@@ -141,13 +162,9 @@ class ViewController: UITableViewController {
                 todoItems = todoItems?.filter("title CONTAINS [cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: false)
                 
                 tableView.reloadData()
-
-                
-                
+ 
             }
 
-                
-            
             
             func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
                 if searchBar.text?.count == 0 {

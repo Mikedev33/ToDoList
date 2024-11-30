@@ -17,6 +17,8 @@
 		345739632CE8F62700ED5AC2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 345739622CE8F62700ED5AC2 /* RealmSwift */; };
 		345739652CE92F4F00ED5AC2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345739642CE92F4F00ED5AC2 /* Item.swift */; };
 		345739672CE92F6400ED5AC2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345739662CE92F6400ED5AC2 /* Category.swift */; };
+		3457396D2CFA54FB00ED5AC2 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457396C2CFA54FB00ED5AC2 /* SwipeTableViewController.swift */; };
+		C3354F28D81F6EA09DD000D4 /* Pods_Todoit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E877DC8B1E2C866CA05C4E19 /* Pods_Todoit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,11 @@
 		34172A5B2CE161BE006FB62E /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		345739642CE92F4F00ED5AC2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		345739662CE92F6400ED5AC2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		345739682CF9088300ED5AC2 /* SwipeCellKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwipeCellKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3457396C2CFA54FB00ED5AC2 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
+		76F1260DF56B1E307EC36CEE /* Pods-Todoit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoit.release.xcconfig"; path = "Target Support Files/Pods-Todoit/Pods-Todoit.release.xcconfig"; sourceTree = "<group>"; };
+		CA5673AC53704FCE67D03D73 /* Pods-Todoit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoit.debug.xcconfig"; path = "Target Support Files/Pods-Todoit/Pods-Todoit.debug.xcconfig"; sourceTree = "<group>"; };
+		E877DC8B1E2C866CA05C4E19 /* Pods_Todoit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todoit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				345739632CE8F62700ED5AC2 /* RealmSwift in Frameworks */,
+				C3354F28D81F6EA09DD000D4 /* Pods_Todoit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +58,8 @@
 			children = (
 				34172A402CE156E7006FB62E /* Todoit */,
 				34172A3F2CE156E7006FB62E /* Products */,
+				D77F5B21B80CE872ED99D0F7 /* Pods */,
+				8C98A13C2DA22FCE8E1A9968 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +91,7 @@
 			children = (
 				34172A5B2CE161BE006FB62E /* CategoryViewController.swift */,
 				34172A452CE156E7006FB62E /* ViewController.swift */,
+				3457396C2CFA54FB00ED5AC2 /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -102,6 +113,24 @@
 			path = "Data Model";
 			sourceTree = "<group>";
 		};
+		8C98A13C2DA22FCE8E1A9968 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				345739682CF9088300ED5AC2 /* SwipeCellKit.framework */,
+				E877DC8B1E2C866CA05C4E19 /* Pods_Todoit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D77F5B21B80CE872ED99D0F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA5673AC53704FCE67D03D73 /* Pods-Todoit.debug.xcconfig */,
+				76F1260DF56B1E307EC36CEE /* Pods-Todoit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34172A552CE156EA006FB62E /* Build configuration list for PBXNativeTarget "Todoit" */;
 			buildPhases = (
+				06910CCDBDE5FA6AEE635509 /* [CP] Check Pods Manifest.lock */,
 				34172A3A2CE156E7006FB62E /* Sources */,
 				34172A3B2CE156E7006FB62E /* Frameworks */,
 				34172A3C2CE156E7006FB62E /* Resources */,
+				CED07A4603987F0D671E6E07 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -174,6 +205,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06910CCDBDE5FA6AEE635509 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Todoit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CED07A4603987F0D671E6E07 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Todoit/Pods-Todoit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Todoit/Pods-Todoit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Todoit/Pods-Todoit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		34172A3A2CE156E7006FB62E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -182,6 +255,7 @@
 				34172A5C2CE161BE006FB62E /* CategoryViewController.swift in Sources */,
 				34172A462CE156E7006FB62E /* ViewController.swift in Sources */,
 				34172A422CE156E7006FB62E /* AppDelegate.swift in Sources */,
+				3457396D2CFA54FB00ED5AC2 /* SwipeTableViewController.swift in Sources */,
 				345739652CE92F4F00ED5AC2 /* Item.swift in Sources */,
 				34172A442CE156E7006FB62E /* SceneDelegate.swift in Sources */,
 				345739672CE92F6400ED5AC2 /* Category.swift in Sources */,
@@ -247,7 +321,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -310,7 +384,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -331,6 +405,7 @@
 		};
 		34172A562CE156EA006FB62E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA5673AC53704FCE67D03D73 /* Pods-Todoit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -359,6 +434,7 @@
 		};
 		34172A572CE156EA006FB62E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76F1260DF56B1E307EC36CEE /* Pods-Todoit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
