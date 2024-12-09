@@ -18,6 +18,7 @@
 		345739652CE92F4F00ED5AC2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345739642CE92F4F00ED5AC2 /* Item.swift */; };
 		345739672CE92F6400ED5AC2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345739662CE92F6400ED5AC2 /* Category.swift */; };
 		3457396D2CFA54FB00ED5AC2 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457396C2CFA54FB00ED5AC2 /* SwipeTableViewController.swift */; };
+		345739702D07B4B100ED5AC2 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3457396F2D07B4B100ED5AC2 /* UIColor+Extensions.swift */; };
 		C3354F28D81F6EA09DD000D4 /* Pods_Todoit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E877DC8B1E2C866CA05C4E19 /* Pods_Todoit.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		345739662CE92F6400ED5AC2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		345739682CF9088300ED5AC2 /* SwipeCellKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwipeCellKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3457396C2CFA54FB00ED5AC2 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
+		3457396F2D07B4B100ED5AC2 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		76F1260DF56B1E307EC36CEE /* Pods-Todoit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoit.release.xcconfig"; path = "Target Support Files/Pods-Todoit/Pods-Todoit.release.xcconfig"; sourceTree = "<group>"; };
 		CA5673AC53704FCE67D03D73 /* Pods-Todoit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoit.debug.xcconfig"; path = "Target Support Files/Pods-Todoit/Pods-Todoit.debug.xcconfig"; sourceTree = "<group>"; };
 		E877DC8B1E2C866CA05C4E19 /* Pods_Todoit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todoit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 		34172A402CE156E7006FB62E /* Todoit */ = {
 			isa = PBXGroup;
 			children = (
+				3457396E2D07B46900ED5AC2 /* Extensions */,
 				34172A412CE156E7006FB62E /* AppDelegate.swift */,
 				34172A432CE156E7006FB62E /* SceneDelegate.swift */,
 				34172A5A2CE15EFC006FB62E /* Data Model */,
@@ -111,6 +114,14 @@
 				345739662CE92F6400ED5AC2 /* Category.swift */,
 			);
 			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		3457396E2D07B46900ED5AC2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3457396F2D07B4B100ED5AC2 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8C98A13C2DA22FCE8E1A9968 /* Frameworks */ = {
@@ -255,6 +266,7 @@
 				34172A5C2CE161BE006FB62E /* CategoryViewController.swift in Sources */,
 				34172A462CE156E7006FB62E /* ViewController.swift in Sources */,
 				34172A422CE156E7006FB62E /* AppDelegate.swift in Sources */,
+				345739702D07B4B100ED5AC2 /* UIColor+Extensions.swift in Sources */,
 				3457396D2CFA54FB00ED5AC2 /* SwipeTableViewController.swift in Sources */,
 				345739652CE92F4F00ED5AC2 /* Item.swift in Sources */,
 				34172A442CE156E7006FB62E /* SceneDelegate.swift in Sources */,

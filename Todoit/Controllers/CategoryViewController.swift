@@ -8,6 +8,8 @@ class CategoryViewController: SwipeTableViewController {
     let realm = try! Realm()
 
     var categories: Results<Category>?
+    var colorCell = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,9 @@ class CategoryViewController: SwipeTableViewController {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added yet"
-        
+       
+        cell.backgroundColor = UIColor(hexString: categories?[indexPath.row].cellColor ?? "#3498db")
+    
         return cell
 
     }
@@ -96,6 +100,10 @@ class CategoryViewController: SwipeTableViewController {
                     let newCategory = Category()
                     
                     newCategory.name = textField.text!
+                    self.colorCell = self.generateRandomColorString()
+
+                    newCategory.cellColor = self.colorCell
+                
                     
                     self.save(category: newCategory)
                 }
@@ -109,6 +117,14 @@ class CategoryViewController: SwipeTableViewController {
                 present(alert, animated: true, completion: nil)
                 
                 
+            }
+    
+    
+            func generateRandomColorString() -> String {
+                let red = Int.random(in: 0...255)
+                let green = Int.random(in: 0...255)
+                let blue = Int.random(in: 0...255)
+                return String(format: "#%02X%02X%02X", red, green, blue)
             }
             
             

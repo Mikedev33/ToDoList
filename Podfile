@@ -7,6 +7,4 @@ target 'Todoit' do
 
   # Pods for Todoit
   pod 'SwipeCellKit'
-
-
 end
