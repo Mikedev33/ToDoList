@@ -1,9 +1,4 @@
-//
-//  SceneDelegate.swift
-//  Todoit
-//
-//  Created by Mischa on 10.11.24.
-//
+
 
 import UIKit
 
